@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.center,
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.form-group {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.form-group__label {
+  width: 80px;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+
+.form input{
+  font-size: 16px;
+  width: 250px;
+}
+
+.small {
+  font-size: 9px;
+}
+
+#error {
+  color: red;
+}
