@@ -8,6 +8,8 @@ const {exec} = require("child_process")
 
 const PORT = process.env.PORT || 4000
 const ALLOW_COMMANDS = process.env.ALLOW_COMMANDS === 'true'
+const REPORT = process.env.REPORT === 'true'
+
 let curReport = {}
 
 app.use(bodyParser.json())
@@ -47,7 +49,7 @@ app.post('/api/run-command', (req, res) => {
 
 app.listen(PORT, ()=> {
   console.log("listening on 3000")
-  sendReport()
+  if(REPORT) sendReport()
 })
 
 function sendReport(){
@@ -60,7 +62,7 @@ function sendReport(){
         errors.push(stderr)
     }
     result.stdout = stdout
-    const toSend = {errors, result}
+    const toSend = {errors, result, timestamp: new Date()}
 
     axios({
       method: 'post',

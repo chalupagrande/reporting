@@ -1,3 +1,3 @@
-# Local Tunnel
+# Reporting
 
-This is a small server to pipe requests made from the public internet to a local device using ngrok.
+This small repo is so a raspberry can report to an external url information about itself without being accessed.
